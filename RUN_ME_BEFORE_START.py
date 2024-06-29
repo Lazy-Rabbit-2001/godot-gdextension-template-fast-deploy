@@ -36,17 +36,16 @@ name = input("Please enter the file name you hope your extension will be named: 
 # Rename "example"s in SConstruct file
 alter("SConstruct", "example", name)
 # Rename the file name and contents of example.gdextension.gd
-target_gdextension_folder = "gdextensions/" + name + "/"
+if os.path.exists("gdextensions/example/bin"):
 
-if os.path.exists("gdextensions/example/"):
-    
+    if os.path.exists("gdextensions/example/bin/example.gdextension"):
+        target_gdextension_file = "gdextensions/example/bin/" + name + ".gdextension"
+        os.rename("gdextensions/example/bin/example.gdextension", target_gdextension_file)
+        alter(target_gdextension_file, "Example", pascal(name))
+        alter(target_gdextension_file, "example", name)
+
+    target_gdextension_folder = "gdextensions/" + name + "/"
     os.rename("gdextensions/example/", target_gdextension_folder)
-    
-    target_gdextension_file = target_gdextension_folder + name + ".gdextension"
-    
-    os.rename(target_gdextension_folder + "example.gdextension", target_gdextension_file)
-    alter(target_gdextension_file, "Example", pascal(name))
-    alter(target_gdextension_file, "example", name)
 
 # Rename the register_types files
 alter("src/register_types.h", "EXAMPLE", name.upper())
