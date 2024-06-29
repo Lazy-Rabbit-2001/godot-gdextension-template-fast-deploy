@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Example" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="my_func">
+			<return type="void" />
+			<param index="0" name="force" type="Vector2" />
+			<param index="1" name="position" type="Vector2" default="Vector2(0, 0)" />
+			<description>
+                This is a test method
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="my_member" type="float" setter="set_my_member" getter="get_my_member" default="0.0">
+            This is a test member
+        </member>
+	</members>
+	<signals>
+		<signal name="my_signal">
+			<param index="0" name="body" type="Node" />
+			<description>
+                This is a test signal
+			</description>
+		</signal>
+	</signals>
+	<constants>
+		<constant name="MY_CONSTANT" value="0" enum="MyEnum">
+			This is a test constant
+		</constant>
+	</constants>
+</class>

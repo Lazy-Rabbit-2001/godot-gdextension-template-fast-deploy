@@ -1,17 +1,28 @@
 #include "register_types.h"
+
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
+#include "example.h"
+#include "doc_data_example.gen.h"
+
 using namespace godot;
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
-	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
-		return;
+	if (p_level == MODULE_INITIALIZATION_LEVEL_SCENE) {
+		// Registers the class(es)
+		ClassDB::register_class<Example>();
 	}
-	//ClassDB::register_class<YourClass>();
+
+	if (p_level == MODULE_INITIALIZATION_LEVEL_EDITOR) {
+		// Registers the documentation for the class(es)
+		GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen editor_help_load_xml_from_utf8_chars_and_len = (GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen)internal::gdextension_interface_get_proc_address("editor_help_load_xml_from_utf8_chars_and_len");
+		editor_help_load_xml_from_utf8_chars_and_len(_doc_data, _doc_data_size);
+	}
+	
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

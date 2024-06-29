@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+import os, editor_builders
 
 
 def normalize_path(val, env):
@@ -11,8 +11,8 @@ def validate_parent_dir(key, val, env):
         raise UserError("'%s' is not a directory: %s" % (key, os.path.dirname(val)))
 
 
-libname = "EXTENSION-NAME"
-projectdir = "demo"
+libname = "example"
+projectdir = "gdextensions/" + libname
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 
@@ -52,6 +52,12 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
+
+docs_xml = []
+docs_xml += Glob("#src/doc_classes/*.xml")
+docs_xml = sorted(docs_xml)
+docs_header = "#src/doc_data_{}.gen.h".format(libname)
+env.Command(docs_header, docs_xml, env.Action(editor_builders.make_doc_header, "Generating documentation header."))
 
 file = "{}{}{}".format(libname, env["suffix"], env["SHLIBSUFFIX"])
 
