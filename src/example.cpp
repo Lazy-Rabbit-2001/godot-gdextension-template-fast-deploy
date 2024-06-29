@@ -3,7 +3,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 
 
-void DynamicBody2D::_bind_methods()
+void Example::_bind_methods()
 {
     // Call ClassDB::bind_method() for each method you want to bind.
     // ADD_PROPERTY() for each property you want to add.
@@ -11,8 +11,8 @@ void DynamicBody2D::_bind_methods()
 }
 
 
-DynamicBody2D::DynamicBody2D() 
+Example::Example() 
 {
     // Intialize your properties here
 }
-DynamicBody2D::~DynamicBody2D() {}
+Example::~Example() {}

@@ -9,8 +9,8 @@ class Example : public Node {
     GDCLASS(Example, Node)
 
 public:
-    DynamicBody2D();
-    ~DynamicBody2D();
+    Example();
+    ~Example();
 
 private:
 

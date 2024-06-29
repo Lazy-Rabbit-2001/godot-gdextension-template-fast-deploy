@@ -15,7 +15,7 @@ def alter(file, old_str, new_str):
     os.rename("%s.bak" % file, file)
 
 # Copied from https://blog.csdn.net/wuxiaobingandbob/article/details/41516003
-def convert(string, space_character = "_"):    
+def pascal(string, space_character = "_"):    
     # param one_string: Original string
     # param space_character: The character used to separate words in the string
     # return: The string with the first word capitalized and the rest in lowercase, separated by the space_character
@@ -36,21 +36,33 @@ name = input("Please enter the file name you hope your extension will be named: 
 # Rename "example"s in SConstruct file
 alter("SConstruct", "example", name)
 # Rename the file name and contents of example.gdextension.gd
-target_gdextension_folder = "gdextension/" + name
-os.rename("gdextension/example", target_gdextension_folder)
-target_gdextension_file = target_gdextension_folder + "/" + name + ".gdextension"
-os.rename(target_gdextension_file + "/example.gdextension", )
-alter(target_gdextension_file, "example", name)
+target_gdextension_folder = "gdextensions/" + name + "/"
+
+if os.path.exists("gdextensions/example/"):
+    
+    os.rename("gdextensions/example/", target_gdextension_folder)
+    
+    target_gdextension_file = target_gdextension_folder + name + ".gdextension"
+    
+    os.rename(target_gdextension_folder + "example.gdextension", target_gdextension_file)
+    alter(target_gdextension_file, "Example", pascal(name))
+    alter(target_gdextension_file, "example", name)
+
 # Rename the register_types files
 alter("src/register_types.h", "EXAMPLE", name.upper())
 alter("src/register_types.cpp", "example", name)
-alter("src/register_types.cpp", "Example", name.capitalize())
+alter("src/register_types.cpp", "Example", pascal(name))
+
 # Rename the example files
-os.rename("src/example.cpp", "src/" + name + ".cpp")
-os.rename("src/example.h", "src/" + name + ".h")
-alter("src/" + name + ".h", "example", name)
-alter("src/" + name + ".h", "EXAMPLE", name.upper())
-alter("src/" + name + ".cpp", "example", name)
-alter("src/" + name + ".cpp", "Example", name.capitalize())
+if os.path.exists("src/example.h"):
+    os.rename("src/example.h", "src/" + name + ".h")
+    alter("src/" + name + ".h", "example", name)
+    alter("src/" + name + ".h", "EXAMPLE", name.upper())
+
+if os.path.exists("src/example.cpp"):
+    os.rename("src/example.cpp", "src/" + name + ".cpp")
+    alter("src/" + name + ".cpp", "example", name)
+    alter("src/" + name + ".cpp", "Example", pascal(name))
+
 # Rename the doc file
-os.rename("src/doc_classes/Example.xml", "src/doc_classes/" + name.capitalize() + ".xml")
+os.rename("src/doc_classes/Example.xml", "src/doc_classes/" + pascal(name) + ".xml")
