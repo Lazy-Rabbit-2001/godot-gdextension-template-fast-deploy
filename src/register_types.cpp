@@ -1,14 +1,11 @@
 #include "register_types.h"
 
 #include <gdextension_interface.h>
-#include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
 #include "example.h"
 #include "doc_data_example.gen.h"
-
-using namespace godot;
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
