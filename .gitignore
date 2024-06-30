@@ -27,6 +27,8 @@ gdextensions/example/bin/windows/*
 !gdextensions/example/bin/*.gdextension
 .sconsign*.dblite
 
+src/doc_data_example.gen.h
+
 # Ignore custom.py
 custom.py
 
