@@ -1,6 +1,6 @@
 [icons]
 
-Example = "res://gdextensions/example/gdextensions/example/bin/example.svg"
+Example = "res://gdextensions/example/bin/example.svg"
 
 [configuration]
 
