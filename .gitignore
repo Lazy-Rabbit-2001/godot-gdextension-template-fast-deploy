@@ -8,10 +8,6 @@ gdextensions/example/bin/*
 gdextensions/example/bin/android/*
 !gdextensions/example/bin/android/.gitkeep
 
-!gdextensions/example/bin/ios
-gdextensions/example/bin/ios/*
-!gdextensions/example/bin/ios/.gitkeep
-
 !gdextensions/example/bin/linux
 gdextensions/example/bin/linux/*
 !gdextensions/example/bin/linux/.gitkeep
