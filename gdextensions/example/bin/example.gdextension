@@ -1,7 +1,11 @@
+[icons]
+
+Example = "res://gdextensions/example/bin/example.svg"
+
 [configuration]
 
 entry_symbol = "example_library_init"
-compatibility_minimum = "4.2"
+compatibility_minimum = "4.3"
 
 [libraries]
 
