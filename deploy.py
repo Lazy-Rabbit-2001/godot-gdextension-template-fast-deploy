@@ -53,8 +53,9 @@ name_upper = name.upper()
 original_name_pascal = godot_pascal(original_name)
 name_pascal = godot_pascal(name)
 
-# Rename orignal_names in SConstruct file
+# Rename orignal_names in SConstruct and .gitignore file
 alter("SConstruct", original_name, name)
+alter(".gitignore", original_name, name)
 # Rename the file name and contents of {}.gdextension.gd
 gdextension_dir = "gdextensions/{}/".format(original_name)
 target_gdextension_dir = "gdextensions/{}/".format(name)
