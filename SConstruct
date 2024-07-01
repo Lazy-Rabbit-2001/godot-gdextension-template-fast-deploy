@@ -53,11 +53,13 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
 
-docs_xml = []
-docs_xml += Glob("#src/doc_classes/*.xml")
-docs_xml = sorted(docs_xml)
-docs_header = "#src/doc_data_{}.gen.h".format(libname)
-env.Command(docs_header, docs_xml, env.Action(editor_builders.make_doc_header, "Generating documentation header."))
+# From https://github.com/akien-mga/threen
+if env["target"] in ["editor", "template_debug"]:
+    try:
+        doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("src/doc_classes/*.xml"))
+        sources.append(doc_data)
+    except AttributeError:
+        print("Not including class reference as we're targeting a pre-4.3 baseline.")
 
 file = "{}{}{}".format(libname, env["suffix"], env["SHLIBSUFFIX"])
 
