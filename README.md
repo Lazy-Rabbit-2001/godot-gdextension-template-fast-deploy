@@ -1,9 +1,9 @@
-# Godot Cpp Template with Docs
+# Godot Cpp with Fast Deployment
 This repository is a fan-extended version of [original Godot Cpp Template](https://github.com/godotengine/godot-cpp-template). About detailed information, please check this link.
 
 ## What's optimized in this version?
-* Added support for custom documentation for classes.
 * Deployed an example h/cpp file for starting.
+* Added a `DEPLOY.bat` for quick start before your development
 
 ## Before you start
 * Create your own repository based on this template.
