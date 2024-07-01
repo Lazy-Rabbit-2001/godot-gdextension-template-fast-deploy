@@ -9,17 +9,11 @@
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
-	if (p_level == MODULE_INITIALIZATION_LEVEL_SCENE) {
-		// Registers the class(es)
-		ClassDB::register_class<Example>();
+	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+		return;
 	}
 
-	if (p_level == MODULE_INITIALIZATION_LEVEL_EDITOR) {
-		// Registers the documentation for the class(es)
-		GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen editor_help_load_xml_from_utf8_chars_and_len = (GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen)internal::gdextension_interface_get_proc_address("editor_help_load_xml_from_utf8_chars_and_len");
-		editor_help_load_xml_from_utf8_chars_and_len(_doc_data, _doc_data_size);
-	}
-	
+	ClassDB::register_class<Example>();
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {
