@@ -5,7 +5,6 @@
 #include <godot_cpp/godot.hpp>
 
 #include "example.h"
-#include "doc_data_example.gen.h"
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
 {
