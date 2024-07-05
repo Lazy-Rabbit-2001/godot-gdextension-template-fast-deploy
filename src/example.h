@@ -9,13 +9,34 @@ class Example : public Node {
     GDCLASS(Example, Node)
 
 public:
-    Example();
-    ~Example();
+    /* Enums */
+    // Replace this
+
 
 private:
+    /* Exported properties */
+    // Replace this
+
+    /* Private methods */
+    // Replace this
+
 
 protected:
+    /* Bindings */
     static void _bind_methods();
+    
+    /* Protected methods */
+    // Replace this
+
+
+public:
+    /* Public methods */
+    // Replace this
+    
+    /* Constructor and destructor */
+    Example();
+    ~Example();
 };
+
 
 #endif
