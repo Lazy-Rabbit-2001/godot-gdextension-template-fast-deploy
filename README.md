@@ -24,7 +24,7 @@ Your reports of bugs and proposals is of greate importance to the development an
 
 ## Platforms
 
-### Operation Systems
+### Operating Systems
 
 #### Editor
 
