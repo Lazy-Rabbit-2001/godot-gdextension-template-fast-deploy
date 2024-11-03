@@ -1,4 +1,4 @@
-# Godot Cpp Template with Fast Deployment
+# Godot GDExtension - Cpp Template with Fast Deployment
 This repository is a fan-extended version of [original Godot Cpp Template](https://github.com/godotengine/godot-cpp-template). Check the link for details.
 
 ## What are optimized in this version?
