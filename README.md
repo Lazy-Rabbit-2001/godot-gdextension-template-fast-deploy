@@ -1,14 +1,14 @@
-# Godot Cpp with Fast Deployment
-This repository is a fan-extended version of [original Godot Cpp Template](https://github.com/godotengine/godot-cpp-template). About detailed information, please check this link.
+# Godot Cpp Template with Fast Deployment
+This repository is a fan-extended version of [original Godot Cpp Template](https://github.com/godotengine/godot-cpp-template). Check the link for details.
 
 ## What are optimized in this version?
 * Deployed an example h/cpp file for starting.
-* Added a `DEPLOY.bat` for quick start before your development
+* Added a `DEPLOY.bat` for quick start before your development.
 
 ## Before you start
 * Create your own repository based on this template.
-* Make sure you have installed [Godot](https://godotengine.org/download) and [Visual Studio Code](https://code.visualstudio.com/download). (Of course you can use any other IDE or text editor, but here we will use Visual Studio Code as an example.)
-* Clone this repository to your local machine.
+* Make sure you have installed [Godot](https://godotengine.org/download) and [Visual Studio Code](https://code.visualstudio.com/download). (Of course you can use other IDE(s), but here we will use Visual Studio Code as an example.)
+* Clone this repository to your device.
 * Open the project in Visual Studio Code.
 * Run `DEPLOY.bat` to rename all `example` files and literals and deploy the godot-cpp environment for your GDExtension.
 * To compile your test build, run 
@@ -44,4 +44,8 @@ Both single and double version are supported
 ### Godot and its forks
 
 Since some complicated things happened to godot community, there have been multiple godot forks right now.
-Currently, all godot forks, plus godot itself, are compatitable with GDExtensions made with this template.
+The following forks of Godot, including Godot itself are supported:
+* Godot (original)
+* Redot
+* Wedot
+* Blazium
